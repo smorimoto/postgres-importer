@@ -1,9 +1,9 @@
-ARG PG_VERSION=15.2
+ARG PG_VERSION=15.3
 ARG VERSION=custom
 
 FROM golang:1.20 as flyutil
 
-WORKDIR /go/src/github.com/fly-examples/fly-postgres
+WORKDIR /go/src/github.com/fly-apps/fly-postgres
 COPY . .
 
 RUN CGO_ENABLED=0 GOOS=linux go build -v -o /fly/bin/migrate ./cmd/migrate
